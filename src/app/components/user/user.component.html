@@ -1,7 +1,40 @@
-<h1>User component</h1>
-<p>my name is {{name}} </p>
-<p>my age is {{age}} </p>
-<p>my address is {{address.city}} </p>
+<h1>{{name}}</h1>
+<ul>
+    <li>Name: {{name}} </li>
+    <li>Age: {{age}} </li>
+    <li>Address: {{address.city}} </li>
+    <li>Email: {{email}} </li>
+</ul>
+
+<h1>Edit User</h1>
+<form>
+  <div>
+    <label for="name">Name: </label><br>
+    <input type="text" [(ngModel)]="name" name="name" >
+  </div>
+  <div>
+    <label for="age">Age: </label><br>
+    <input type="number" [(ngModel)]="age" name="age">
+  </div>
+  <div>
+    <label for="email">Email: </label><br>
+    <input type="text" [(ngModel)]="email" name="email">
+  </div>
+  <div>
+    <label for="city">City: </label><br>
+    <input type="text" [(ngModel)]="address.city" name="city">
+  </div>
+</form>
+
+
+
+
+<h1>Hobby</h1>
+<form (submit)="addHobby(hobby.value)">
+  <label for="hobby">Add:</label>
+  <input type="text" #hobby>
+  <button (click)="onClick()">Add</button>
+</form>
 
 <ul>
     <li *ngFor="let hobby of hobbies; let i = index" > 
@@ -9,9 +42,5 @@
     </li>
 </ul>
 
-<button (click)="onClick()" >Click Me!</button>
 
-<form (submit)="addHobby(hobby.value)">
-    <label for="hobby">Hobby:</label>
-    <input type="text" #hobby>
-</form>
+
