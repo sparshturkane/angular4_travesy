@@ -1,0 +1,17 @@
+<h1>User component</h1>
+<p>my name is {{name}} </p>
+<p>my age is {{age}} </p>
+<p>my address is {{address.city}} </p>
+
+<ul>
+    <li *ngFor="let hobby of hobbies; let i = index" > 
+        {{i+1}} {{hobby}} <button (click)="deleteHobby(i)" >x</button>
+    </li>
+</ul>
+
+<button (click)="onClick()" >Click Me!</button>
+
+<form (submit)="addHobby(hobby.value)">
+    <label for="hobby">Hobby:</label>
+    <input type="text" #hobby>
+</form>
