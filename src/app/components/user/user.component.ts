@@ -27,6 +27,8 @@ export class UserComponent implements OnInit {
 
   posts:Post[];
 
+  edit: boolean = false;
+
 
 
 
@@ -66,6 +68,10 @@ export class UserComponent implements OnInit {
   deleteHobby(i){
     console.log(i);
     this.hobbies.splice(i, 1);
+  }
+
+  toggleEdit(){
+    this.edit = !this.edit;
   }
 
 }
